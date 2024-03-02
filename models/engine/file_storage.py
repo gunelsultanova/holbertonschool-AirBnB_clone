@@ -36,4 +36,4 @@ class FileStorage:
                 for key in data:
                     FileStorage.__objects[key] = BaseModel(**data[key])
         except Exception:
-            pass
+            return
