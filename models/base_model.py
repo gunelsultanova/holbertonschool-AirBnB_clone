@@ -6,6 +6,7 @@ Base model defines all common attributes/methods for other classes
 
 import uuid
 from datetime import datetime
+from models.engine import storage
 
 
 class BaseModel:
@@ -30,6 +31,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new()
 
     def __str__(self):
         return "[{}] ({}) {}".format(self.__class__.__name__,
@@ -42,6 +44,7 @@ class BaseModel:
         """
 
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """
