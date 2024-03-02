@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-import cmd
 
 
 """
 console.py contains the entry point of the command interpreter
 """
+
+
+import cmd
 
 
 class HBNBCommand(cmd.Cmd):
