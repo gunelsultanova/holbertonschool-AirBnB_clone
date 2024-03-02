@@ -13,7 +13,7 @@ class BaseModel:
     Base model for other classes
     """
 
-      def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
