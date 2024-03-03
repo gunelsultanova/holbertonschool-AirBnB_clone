@@ -149,6 +149,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             del obj_dict[key]
             storage.save()
+            storage.reload()
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id.
