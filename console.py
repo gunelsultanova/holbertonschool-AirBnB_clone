@@ -83,6 +83,32 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
+
+        className = {'BaseModel': BaseModel,
+                 'User': User,
+                 'State': State,
+                 'City': City,
+                 'Amenity': Amenity,
+                 'Place': Place,
+                 'Review': Review}
+        import shlex
+
+        args = shlex.split(arg)
+        if args[0] not in HBNBCommand.className.keys():
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif args[0]+'.'+args[1] not in models.storage\
+                                              ._FileStorage__objects.keys():
+            print("** no instance found **")
+        else:
+            del models.storage._FileStorage__objects[args[0]+'.'+args[1]]
+            models.storage.save()
+
+
+        
+
+        """
         arg_list = arg.split()
         class_name = arg_list[0]
 
@@ -110,6 +136,7 @@ class HBNBCommand(cmd.Cmd):
             print(obj_dict[key])
         else:
             print("** no instance found **")
+        """
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id.
