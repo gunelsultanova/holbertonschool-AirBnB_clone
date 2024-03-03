@@ -14,7 +14,11 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
+    """
+    console.py contains the entry point of the command interpreter
+    """
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
@@ -53,7 +57,15 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
+        if class_name not in [
+                "BaseModel",
+                "User",
+                "Place",
+                "State",
+                "City",
+                "Amenity",
+                "Review"
+                ]:
             print("** class doesn't exist **")
             return
 
@@ -74,7 +86,15 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
+        if class_name not in [
+                "BaseModel",
+                "User",
+                "Place",
+                "State",
+                "City",
+                "Amenity",
+                "Review"
+                ]:
             print("** class doesn't exist **")
             return
 
@@ -104,7 +124,15 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
+        if class_name not in [
+                "BaseModel",
+                "User",
+                "Place",
+                "State",
+                "City",
+                "Amenity",
+                "Review"
+                ]:
             print("** class doesn't exist **")
             return
 
@@ -135,7 +163,15 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
+        if class_name not in [
+                "BaseModel",
+                "User",
+                "Place",
+                "State",
+                "City",
+                "Amenity",
+                "Review"
+                ]:
             print("** class doesn't exist **")
             return
 
@@ -181,11 +217,20 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
+        if class_name not in [
+                "BaseModel",
+                "User",
+                "Place",
+                "State",
+                "City",
+                "Amenity",
+                "Review"
+                ]:
             print("** class doesn't exist **")
             return
 
         print([str(obj_dict[key]) for key in obj_dict if class_name in key])
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
