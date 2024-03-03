@@ -7,6 +7,8 @@ console.py contains the entry point of the command interpreter
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
@@ -47,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
             return
 
@@ -68,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
             return
 
@@ -98,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
             return
 
@@ -129,7 +131,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
             return
 
@@ -175,7 +177,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
             return
 
