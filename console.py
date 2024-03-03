@@ -20,6 +20,17 @@ class HBNBCommand(cmd.Cmd):
     console.py contains the entry point of the command interpreter
     """
     prompt = "(hbnb) "
+    
+    # Define valid classes dictionary
+    valid_classes = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "Place": Place,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Review": Review
+    }
 
     def do_quit(self, arg):
         """Quit the console."""
@@ -45,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Create a new instance of BaseModel, save it, and print its id.
+        """Create a new instance of a class, save it, and print its id.
 
         Usage:
             create BaseModel
@@ -57,19 +68,11 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in [
-                "BaseModel",
-                "User",
-                "Place",
-                "State",
-                "City",
-                "Amenity",
-                "Review"
-                ]:
+        if class_name not in self.valid_classes:
             print("** class doesn't exist **")
             return
 
-        new_instance = BaseModel()
+        new_instance = self.valid_classes[class_name]()
         new_instance.save()
         print(new_instance.id)
 
@@ -86,15 +89,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in [
-                "BaseModel",
-                "User",
-                "Place",
-                "State",
-                "City",
-                "Amenity",
-                "Review"
-                ]:
+        if class_name not in self.valid_classes:
             print("** class doesn't exist **")
             return
 
@@ -124,15 +119,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in [
-                "BaseModel",
-                "User",
-                "Place",
-                "State",
-                "City",
-                "Amenity",
-                "Review"
-                ]:
+        if class_name not in self.valid_classes:
             print("** class doesn't exist **")
             return
 
@@ -164,15 +151,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in [
-                "BaseModel",
-                "User",
-                "Place",
-                "State",
-                "City",
-                "Amenity",
-                "Review"
-                ]:
+        if class_name not in self.valid_classes:
             print("** class doesn't exist **")
             return
 
@@ -218,15 +197,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in [
-                "BaseModel",
-                "User",
-                "Place",
-                "State",
-                "City",
-                "Amenity",
-                "Review"
-                ]:
+        if class_name not in self.valid_classes:
             print("** class doesn't exist **")
             return
 
