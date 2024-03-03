@@ -4,6 +4,7 @@ from models.base_model import BaseModel
 from datetime import datetime
 from models.engine.file_storage import FileStorage
 
+
 class TestBaseModel(TestCase):
     def setUp(self):
         self.b1 = BaseModel()

@@ -3,6 +3,7 @@ from unittest import TestCase
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 
+
 class TestFileStorage(TestCase):
     def setUp(self):
         self.fs = FileStorage()
@@ -22,7 +23,8 @@ class TestFileStorage(TestCase):
 
         with open(self.file_path, "r") as f:
             read_data = f.read()
-        self.assertIn("{}.{}".format(self.b1.__class__.__name__, self.b1.id), read_data)
+        self.assertIn("{}.{}".format(
+            self.b1.__class__.__name__, self.b1.id), read_data)
 
     def test_reload(self):
         self.fs.save()
