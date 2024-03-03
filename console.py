@@ -161,5 +161,25 @@ class HBNBCommand(cmd.Cmd):
         setattr(obj, attribute_name, attribute_value)
         obj.save()
 
+    def do_all(self, arg):
+        """Prints all string representations of all instances.
+
+        Usage:
+            all BaseModel or all
+        """
+        obj_dict = storage.all()
+        if not arg:
+            print([str(obj_dict[key]) for key in obj_dict])
+            return
+
+        arg_list = arg.split()
+        class_name = arg_list[0]
+
+        if class_name not in ["BaseModel"]:
+            print("** class doesn't exist **")
+            return
+
+        print([str(obj_dict[key]) for key in obj_dict if class_name in key])
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
