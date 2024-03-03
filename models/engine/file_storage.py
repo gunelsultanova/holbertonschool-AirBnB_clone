@@ -40,5 +40,5 @@ class FileStorage:
                             obj_class = globals().get(class_name)
                             if obj_class:
                                 FileStorage.__objects[key] = obj_class(**data[key])
-        except FileNotFoundError:
+        except Exception:
             pass
