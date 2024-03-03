@@ -7,6 +7,12 @@ console.py contains the entry point of the command interpreter
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
@@ -47,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
             print("** class doesn't exist **")
             return
 
@@ -68,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
             print("** class doesn't exist **")
             return
 
@@ -98,7 +104,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
             print("** class doesn't exist **")
             return
 
@@ -129,7 +135,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
             print("** class doesn't exist **")
             return
 
@@ -175,7 +181,7 @@ class HBNBCommand(cmd.Cmd):
         arg_list = arg.split()
         class_name = arg_list[0]
 
-        if class_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]:
             print("** class doesn't exist **")
             return
 
