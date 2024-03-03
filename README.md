@@ -2,36 +2,33 @@
 Description
 This is a command-line interpreter (CLI) for managing AirBnB-like objects. It is part of a larger project aimed at building an AirBnB clone. The purpose of this project is to implement a parent class (BaseModel) for object initialization, serialization, and deserialization, along with creating classes (User, State, City, Place, etc.) that inherit from BaseModel. The project also involves creating a simple flow for serialization/deserialization (Instance <-> Dictionary <-> JSON string <-> file), as well as the implementation of a file storage engine.
 
-Command Interpreter
-How to Start
+## Command Interpreter
+### How to Start
 To start the AirBnB console, ensure you have Python installed. Then follow these steps:
 
-Clone the repository: git clone <repository-url>
-Navigate to the project directory: cd <project-directory>
-Run the console script: ./console.py
-How to Use
+- Clone the repository: git clone <repository-url>
+- Navigate to the project directory: cd <project-directory>
+- Run the console script: ./console.py
+### How to Use
 Once the console is running, you will see the (hbnb) prompt. Here are some available commands:
 
-Create: Creates a new instance of BaseModel, saves it, and prints its id.
+* Create: Creates a new instance of BaseModel, saves it, and prints its id.
 
-Usage: create BaseModel
-Example: create BaseModel
-Show: Prints the string representation of an instance based on the class name and id.
-
-Usage: show BaseModel <instance-id>
-Example: show BaseModel 6770495a-3dee-4319-b885-f25a42c1fc44
-Destroy: Deletes an instance based on the class name and id.
-
-Usage: destroy BaseModel <instance-id>
-Example: destroy BaseModel 6770495a-3dee-4319-b885-f25a42c1fc44
-Update: Updates an instance based on the class name and id.
-
-Usage: update BaseModel <instance-id> <attribute-name> "<attribute-value>"
-Example: update BaseModel 6770495a-3dee-4319-b885-f25a42c1fc44 name "New Name"
-All: Prints all string representations of all instances or those of a specific class.
-
-Usage: all or all BaseModel
-Examples:
+  Usage: create BaseModel
+  Example: create BaseModel
+* Show: Prints the string representation of an instance based on the class name and id.
+  Usage: show BaseModel <instance-id>
+  Example: show BaseModel 6770495a-3dee-4319-b885-f25a42c1fc44
+* Destroy: Deletes an instance based on the class name and id.
+  Usage: destroy BaseModel <instance-id>
+  Example: destroy BaseModel 6770495a-3dee-4319-b885-f25a42c1fc44
+* Update: Updates an instance based on the class name and id.
+  Usage: update BaseModel <instance-id> <attribute-name> "<attribute-value>"
+  Example: update BaseModel 6770495a-3dee-4319-b885-f25a42c1fc44 name "New Name"
+* All: Prints all string representations of all instances or those of a specific class.
+  Usage: all or all BaseModel
+  
+### Examples:
 all
 all BaseModel
 Quit: Exits the console.
