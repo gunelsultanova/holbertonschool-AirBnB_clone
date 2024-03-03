@@ -6,7 +6,7 @@ console.py contains the entry point of the command interpreter
 
 import cmd
 from models.base_model import BaseModel
-
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
