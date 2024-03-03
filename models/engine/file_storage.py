@@ -57,21 +57,21 @@ class FileStorage:
         """
 
         try:
-            with open(self.__file_path, 'r') as file:
+            with open(FileStorage.__file_path, 'r') as file:
                 data = json.loads(file.read())
                 for key, val in data.items():
                     class_name = key.split('.')[0]
                     if class_name == "BaseModel":
-                        self.__objects[key] = BaseModel(**val)
+                        FileStorage.__objects[key] = BaseModel(**val)
                     elif class_name == "Place":
-                        self.__objects[key] = Place(**val)
+                        FileStorage.__objects[key] = Place(**val)
                     elif class_name == "State":
-                        self.__objects[key] = State(**val)
+                        FileStorage.__objects[key] = State(**val)
                     elif class_name == "City":
-                        self.__objects[key] = City(**val)
+                        FileStorage.__objects[key] = City(**val)
                     elif class_name == "Amenity":
-                        self.__objects[key] = Amenity(**val)
+                        FileStorage.__objects[key] = Amenity(**val)
                     elif class_name == "Review":
-                        self.__objects[key] = Review(**val)
+                        FileStorage.__objects[key] = Review(**val)
         except FileNotFoundError:
             pass
