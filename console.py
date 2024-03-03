@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
     console.py contains the entry point of the command interpreter
     """
     prompt = "(hbnb) "
-    
+
     # Define valid classes dictionary
     valid_classes = {
         "BaseModel": BaseModel,
