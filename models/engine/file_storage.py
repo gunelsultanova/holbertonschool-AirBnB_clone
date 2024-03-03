@@ -7,25 +7,16 @@ Serializes instances to a JSON file and deserializes JSON file to instances
 
 import json
 from models.base_model import BaseModel
-from models.user import User
+from models.place import Place
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
-from models.place import Place
 from models.review import Review
-
 
 class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
-    className = {'BaseModel': BaseModel,
-                 'User': User,
-                 'State': State,
-                 'City': City,
-                 'Amenity': Amenity,
-                 'Place': Place,
-                 'Review': Review}
 
     def all(self):
         return FileStorage.__objects
@@ -44,12 +35,21 @@ class FileStorage:
 
     def reload(self):
         try:
-            with open(FileStorage.__file_path, 'r') as f:
-                f_contents = f.read()
-                dict_obj_dicts = json.loads(f_contents)
-            for key in dict_obj_dicts.keys():
-                obj_dict = dict_obj_dicts[key]
-                FileStorage.__objects[key] = FileStorage\
-                           .className[key.split('.')[0]](**obj_dict)
+            with open(self.__file_path, 'r') as file:
+                data = json.loads(file.read())
+                for key, val in data.items():
+                    class_name = key.split('.')[0]
+                    if class_name == "BaseModel":
+                        self.__objects[key] = BaseModel(**val)
+                    elif class_name == "Place":
+                        self.__objects[key] = Place(**val)
+                    elif class_name == "State":
+                        self.__objects[key] = State(**val)
+                    elif class_name == "City":
+                        self.__objects[key] = City(**val)
+                    elif class_name == "Amenity":
+                        self.__objects[key] = Amenity(**val)
+                    elif class_name == "Review":
+                        self.__objects[key] = Review(**val)
         except FileNotFoundError:
             pass
